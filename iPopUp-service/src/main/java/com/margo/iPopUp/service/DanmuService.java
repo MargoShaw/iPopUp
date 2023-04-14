@@ -29,7 +29,7 @@ public class DanmuService {
         danmuDao.addDanmu(danmu);
     }
 
-    @Async
+    @Async("io-executor")
     public void asyncAddDanmu(Danmu danmu){
         danmuDao.addDanmu(danmu);
     }
