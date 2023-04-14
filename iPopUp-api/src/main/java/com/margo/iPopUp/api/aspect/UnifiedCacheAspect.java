@@ -65,7 +65,7 @@ public class UnifiedCacheAspect {
         //缓存名称
         String name = annotation.name();
         //先从redis获取
-        String redisKey = name + "::" + className+"::"+methodName+"::"+params;
+        String redisKey = name + "::" + className+"::"+methodName+"::"+params.toString();
         String redisValue = redisTemplate.opsForValue().get(redisKey);
         Object proceed = pjp.proceed();
         redisTemplate.opsForValue().set(redisKey,JSON.toJSONString(proceed), Duration.ofMillis(expire));
