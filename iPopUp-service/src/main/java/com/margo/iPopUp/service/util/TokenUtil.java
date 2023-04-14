@@ -12,7 +12,7 @@ import java.util.Date;
 
 public class TokenUtil {
 
-    private static final String ISSUER = "签发者";
+    private static final String ISSUER = "Margo";
 
     public static String generateToken(Long userId) throws Exception{
         Algorithm algorithm = Algorithm.RSA256(RSAUtil.getPublicKey(), RSAUtil.getPrivateKey());
