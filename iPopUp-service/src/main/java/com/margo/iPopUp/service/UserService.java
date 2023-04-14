@@ -173,7 +173,7 @@ public class UserService {
         //保存refresh token到数据库
         userDao.deleteRefreshTokenByUserId(userId);
         userDao.addRefreshToken(refreshToken, userId, new Date());
-        Map<String, Object> result = new HashMap<>();
+        Map<String, Object> result = new HashMap<>(4);
         result.put("accessToken", accessToken);
         result.put("refreshToken", refreshToken);
         return result;
@@ -188,6 +188,7 @@ public class UserService {
         if(refreshTokenDetail == null){
             throw new ConditionException("555","token过期！");
         }
+        TokenUtil.verifyRefreshToken(refreshToken);
         Long userId = refreshTokenDetail.getUserId();
         return TokenUtil.generateToken(userId);
     }

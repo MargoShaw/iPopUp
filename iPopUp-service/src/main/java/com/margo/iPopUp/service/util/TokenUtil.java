@@ -5,12 +5,18 @@ import com.auth0.jwt.JWTVerifier;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.exceptions.TokenExpiredException;
 import com.auth0.jwt.interfaces.DecodedJWT;
+import com.margo.iPopUp.dao.UserDao;
 import com.margo.iPopUp.domain.exception.ConditionException;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.util.Calendar;
 import java.util.Date;
 
+@Component
 public class TokenUtil {
+    @Autowired
+    private UserDao userDao;
 
     private static final String ISSUER = "Margo";
 
@@ -53,4 +59,18 @@ public class TokenUtil {
     }
 
 
+    public static Long verifyRefreshToken(String refreshToken) {
+        try{
+            Algorithm algorithm = Algorithm.RSA256(RSAUtil.getPublicKey(), RSAUtil.getPrivateKey());
+            JWTVerifier verifier = JWT.require(algorithm).build();
+            DecodedJWT jwt = verifier.verify(refreshToken);
+            String userId = jwt.getKeyId();
+            return Long.valueOf(userId);
+        }catch (TokenExpiredException e){
+
+            throw new ConditionException("555","refresh token过期！");
+        }catch (Exception e){
+            throw new ConditionException("非法用户token！");
+        }
+    }
 }
