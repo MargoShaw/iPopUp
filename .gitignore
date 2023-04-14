@@ -1,0 +1,4 @@
+# 项目排除路径
+/iPopUp-api/target/
+/iPopUp-dao/target/
+/iPopUp-service/target/
