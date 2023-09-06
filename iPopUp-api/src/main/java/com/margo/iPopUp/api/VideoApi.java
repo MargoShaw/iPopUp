@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.margo.iPopUp.api.support.UserSupport;
 import com.margo.iPopUp.domain.*;
+import com.margo.iPopUp.domain.annotation.RateLimiter;
 import com.margo.iPopUp.service.ElasticSearchService;
 import com.margo.iPopUp.service.VideoService;
 import org.apache.mahout.cf.taste.common.TasteException;
@@ -153,6 +154,7 @@ public class VideoApi {
     /**
      * 添加视频评论
      */
+    @RateLimiter()
     @PostMapping("/video-comments")
     public JsonResponse<String> addVideoComment(@RequestBody VideoComment videoComment){
         Long userId = userSupport.getCurrentUserId();
@@ -259,5 +261,14 @@ public class VideoApi {
         Long videoId = params.getLong("videoId");
         videoService.deleteVideoTags(JSONArray.parseArray(tagIdList).toJavaList(Long.class), videoId);
         return JsonResponse.success();
+    }
+
+    /**
+     *  视频排行榜
+     */
+    @GetMapping("video-ranking")
+    public JsonResponse<List<VideoRanking>> getVideoRanking(){
+        List<VideoRanking> list = videoService.getVideoRanking();
+        return JsonResponse.success(list);
     }
 }

@@ -3,6 +3,7 @@ package com.margo.iPopUp.service;
 
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
+import com.google.common.hash.BloomFilter;
 import com.margo.iPopUp.dao.DanmuDao;
 import com.margo.iPopUp.domain.Danmu;
 import io.netty.util.internal.StringUtil;
@@ -25,6 +26,9 @@ public class DanmuService {
     @Autowired
     private RedisTemplate<String, String> redisTemplate;
 
+    @Autowired
+    private BloomFilter<String> bloomFilter;
+
     public void addDanmu(Danmu danmu){
         danmuDao.addDanmu(danmu);
     }
@@ -41,6 +45,10 @@ public class DanmuService {
     public List<Danmu> getDanmus(Long videoId,
                                  String startTime, String endTime) throws Exception {
 
+        //如果数据库不存在，直接返回空
+        if(!bloomFilter.mightContain(videoId.toString())){
+            return Collections.emptyList();
+        }
         String key = DANMU_KEY + videoId;
         String value = redisTemplate.opsForValue().get(key);
         List<Danmu> list;

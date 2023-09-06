@@ -1,0 +1,156 @@
+INSERT INTO DestroyedDrug(PDno, PDbatch, PDnum, Sno, SAno, Stime, DAno, Dtime)
+	VALUES('H31020838', '2021-11-21', 17, 'SYT0001', 'admin0001', '2021-11-25 11:53:45.000',
+														'admin0002', '2022-05-05 15:15:29.000');
+INSERT INTO DestroyedDrug(PDno, PDbatch, PDnum, Sno, SAno, Stime, DAno, Dtime)
+	VALUES('H31020838', '2022-04-17', 13, 'SYT0001', 'admin0003', '2022-04-19 13:15:23.000',
+														'admin0005', '2022-09-29 10:53:14.000');
+INSERT INTO DestroyedDrug(PDno, PDbatch, PDnum, Sno, SAno, Stime, DAno, Dtime)
+	VALUES('H20043730', '2021-11-05', 26, 'SDS0001', 'admin0002', '2021-11-09 14:29:16.000',
+														'admin0003', '2022-02-23 10:59:05.000');
+INSERT INTO DestroyedDrug(PDno, PDbatch, PDnum, Sno, SAno, Stime, DAno, Dtime)
+	VALUES('H20043730', '2022-02-03', 17, 'SDS0001', 'admin0004', '2022-02-05 09:16:44.000',
+														'admin0001', '2022-05-17 14:52:17.000');
+INSERT INTO DestroyedDrug(PDno, PDbatch, PDnum, Sno, SAno, Stime, DAno, Dtime)
+	VALUES('H20043730', '2022-05-07', 16, 'SDS0001', 'admin0001', '2022-05-11 15:13:29.000',
+														'admin0005', '2022-08-23 17:09:22.000');
+INSERT INTO DestroyedDrug(PDno, PDbatch, PDnum, Sno, SAno, Stime, DAno, Dtime)
+	VALUES('H32021306', '2021-01-08', 25, 'SGT0001', 'admin0002', '2021-01-11 10:36:55.000',
+														'admin0005', '2021-04-01 12:05:53.000');
+INSERT INTO DestroyedDrug(PDno, PDbatch, PDnum, Sno, SAno, Stime, DAno, Dtime)
+	VALUES('H32021306', '2021-03-28', 17, 'SGT0001', 'admin0002', '2021-03-31 12:03:05.000',
+														'admin0005', '2021-06-19 15:53:01.000');
+INSERT INTO DestroyedDrug(PDno, PDbatch, PDnum, Sno, SAno, Stime, DAno, Dtime)
+	VALUES('H32021306', '2021-05-31', 8, 'SGYKG0001', 'admin0003', '2021-06-03 17:06:57.000',
+														'admin0001', '2021-08-22 13:07:35.000');
+INSERT INTO DestroyedDrug(PDno, PDbatch, PDnum, Sno, SAno, Stime, DAno, Dtime)
+	VALUES('H32021306', '2021-08-09', 5, 'SXZT0001', 'admin0004', '2021-08-12 16:21:05.000',
+														'admin0004', '2021-11-01 12:36:19.000');
+INSERT INTO DestroyedDrug(PDno, PDbatch, PDnum, Sno, SAno, Stime, DAno, Dtime)
+	VALUES('H32021306', '2021-10-28', 25, 'SGYKG0001', 'admin0002', '2021-10-31 10:29:50.000',
+														'admin0003', '2022-01-19 13:54:56.000');
+INSERT INTO DestroyedDrug(PDno, PDbatch, PDnum, Sno, SAno, Stime, DAno, Dtime)
+	VALUES('H32021306', '2022-01-07', 19, 'SFT0001', 'admin0002', '2022-01-11 13:36:56.000',
+														'admin0005', '2022-03-27 12:13:15.000');
+INSERT INTO DestroyedDrug(PDno, PDbatch, PDnum, Sno, SAno, Stime, DAno, Dtime)
+	VALUES('H19993751', '2021-06-01', 3, 'SFT0001', 'admin0004', '2021-06-10 10:30:22.000',
+														'admin0002', '2022-05-10 16:17:05.000');
+INSERT INTO DestroyedDrug(PDno, PDbatch, PDnum, Sno, SAno, Stime, DAno, Dtime)
+	VALUES('H19993751', '2021-11-13', 51, 'STJ0001', 'admin0003', '2021-11-16 10:16:03.000',
+														'admin0002', '2022-10-15 14:27:35.000');
+INSERT INTO DestroyedDrug(PDno, PDbatch, PDnum, Sno, SAno, Stime, DAno, Dtime)
+	VALUES('H20211082', '2021-03-15', 15, 'SKYQD0001', 'admin0003', '2021-03-25 09:16:30.000',
+														'admin0004', '2021-12-05 11:05:06.000');
+INSERT INTO DestroyedDrug(PDno, PDbatch, PDnum, Sno, SAno, Stime, DAno, Dtime)
+	VALUES('H20211082', '2022-01-07', 39, 'SHY0001', 'admin0003', '2022-01-13 11:37:43.000',
+														'admin0005', '2022-09-28 13:47:09.000');
+INSERT INTO DestroyedDrug(PDno, PDbatch, PDnum, Sno, SAno, Stime, DAno, Dtime)
+	VALUES('H20211082', '2022-03-09', 27, 'SKYQD0001', 'admin0003', '2022-03-15 16:13:10.000',
+														'admin0005', '2022-11-21 15:08:15.000');
+INSERT INTO DestroyedDrug(PDno, PDbatch, PDnum, Sno, SAno, Stime, DAno, Dtime)
+	VALUES('H31020892', '2021-06-01', 9, 'SGT0001', 'admin0004', '2021-06-10 16:45:39.000',
+														'admin0004', '2021-09-24 13:59:15.000');
+INSERT INTO DestroyedDrug(PDno, PDbatch, PDnum, Sno, SAno, Stime, DAno, Dtime)
+	VALUES('H31020892', '2021-09-11', 16, 'SGT0001', 'admin0001', '2021-09-13 10:03:19.000',
+														'admin0003', '2021-12-31 09:29:53.000');
+INSERT INTO DestroyedDrug(PDno, PDbatch, PDnum, Sno, SAno, Stime, DAno, Dtime)
+	VALUES('H31020892', '2021-12-23', 21, 'SDS0001', 'admin0005', '2021-12-27 15:34:09.000',
+														'admin0001', '2022-04-14 13:36:05.000');
+INSERT INTO DestroyedDrug(PDno, PDbatch, PDnum, Sno, SAno, Stime, DAno, Dtime)
+	VALUES('H31020892', '2022-04-05', 3, 'SYT0001', 'admin0001', '2022-04-08 16:06:37.000',
+														'admin0005', '2022-09-29 10:35:37.000');
+INSERT INTO DestroyedDrug(PDno, PDbatch, PDnum, Sno, SAno, Stime, DAno, Dtime)
+	VALUES('H10910034', '2021-09-30', 8, 'SGYKG0001', 'admin0004', '2021-10-10 15:05:26.000',
+														'admin0001', '2021-12-24 09:16:55.000');
+INSERT INTO DestroyedDrug(PDno, PDbatch, PDnum, Sno, SAno, Stime, DAno, Dtime)
+	VALUES('H10910034', '2021-12-13', 63, 'SGT0001', 'admin0005', '2021-12-15 15:26:30.000',
+														'admin0003', '2022-03-03 14:36:05.000');
+INSERT INTO DestroyedDrug(PDno, PDbatch, PDnum, Sno, SAno, Stime, DAno, Dtime)
+	VALUES('H10910034', '2022-05-22', 15, 'SKYQD0001', 'admin0002', '2022-05-24 16:04:06.000',
+														'admin0003', '2022-08-14 09:56:50.000');
+INSERT INTO DestroyedDrug(PDno, PDbatch, PDnum, Sno, SAno, Stime, DAno, Dtime)
+	VALUES('H10910034', '2022-09-23', 29, 'SKYQD0001', 'admin0001', '2022-09-26 10:53:26.000',
+														'admin0001', '2022-12-17 08:56:08.000');
+INSERT INTO DestroyedDrug(PDno, PDbatch, PDnum, Sno, SAno, Stime, DAno, Dtime)
+	VALUES('H20153143', '2021-08-18', 27, 'SXZT0001', 'admin0005', '2021-08-25 10:28:23.000',
+														'admin0002', '2022-02-06 16:13:43.000');
+INSERT INTO DestroyedDrug(PDno, PDbatch, PDnum, Sno, SAno, Stime, DAno, Dtime)
+	VALUES('H20153143', '2021-12-27', 6, 'SKYQD0001', 'admin0001', '2021-12-28 09:54:06.000',
+														'admin0002', '2022-06-13 15:13:47.000');
+INSERT INTO DestroyedDrug(PDno, PDbatch, PDnum, Sno, SAno, Stime, DAno, Dtime)
+	VALUES('H20023788', '2021-06-10', 5, 'SYC0001', 'admin0005', '2021-06-12 10:37:30.000',
+														'admin0001', '2022-09-23 15:22:16.000');
+INSERT INTO DestroyedDrug(PDno, PDbatch, PDnum, Sno, SAno, Stime, DAno, Dtime)
+	VALUES('Z20054523', '2021-06-13', 7, 'SYC0001', 'admin0002', '2021-06-15 10:49:32.000',
+														'admin0003', '2022-12-03 08:53:19.000');
+INSERT INTO DestroyedDrug(PDno, PDbatch, PDnum, Sno, SAno, Stime, DAno, Dtime)
+	VALUES('Z20054523', '2021-12-01', 23, 'STJ0001', 'admin0001', '2021-12-04 16:22:10.000',
+														'admin0005', '2022-05-21 10:11:06.000');
+INSERT INTO DestroyedDrug(PDno, PDbatch, PDnum, Sno, SAno, Stime, DAno, Dtime)
+	VALUES('Z51020341', '2021-03-17', 39, 'STY0001', 'admin0003', '2021-03-20 11:39:43.000',
+														'admin0004', '2022-03-02 15:02:14.000');
+INSERT INTO DestroyedDrug(PDno, PDbatch, PDnum, Sno, SAno, Stime, DAno, Dtime)
+	VALUES('Z20083397', '2021-06-10', 8, 'SGT0001', 'admin0002', '2021-06-11 09:32:46.000',
+														'admin0002', '2022-05-24 08:52:36.000');
+INSERT INTO DestroyedDrug(PDno, PDbatch, PDnum, Sno, SAno, Stime, DAno, Dtime)
+	VALUES('Z34020775', '2021-08-23', 32, 'STY0001', 'admin0002', '2021-08-25 15:03:11.000',
+														'admin0003', '2022-08-03 14:23:38.000');
+INSERT INTO DestroyedDrug(PDno, PDbatch, PDnum, Sno, SAno, Stime, DAno, Dtime)
+	VALUES('Z63020270', '2017-11-23', 24, 'SYT0001', 'admin0004', '2017-11-29 14:16:23.000',
+														'admin0002', '2022-10-24 11:47:13.000');
+INSERT INTO DestroyedDrug(PDno, PDbatch, PDnum, Sno, SAno, Stime, DAno, Dtime)
+	VALUES('H41024386', '2017-11-03', 6, 'SYT0001', 'admin0004', '2017-11-05 11:36:03.000',
+														'admin0005', '2022-04-04 13:36:18.000');
+INSERT INTO DestroyedDrug(PDno, PDbatch, PDnum, Sno, SAno, Stime, DAno, Dtime)
+	VALUES('H41024386', '2021-03-13', 20, 'SGT0001', 'admin0005', '2021-03-14 10:32:11.000',
+														'admin0002', '2022-08-16 13:11:58.000');
+INSERT INTO DestroyedDrug(PDno, PDbatch, PDnum, Sno, SAno, Stime, DAno, Dtime)
+	VALUES('H20171255', '2021-12-05', 7, 'SDS0001', 'admin0001', '2021-12-07 12:09:34.000',
+														'admin0003', '2022-05-21 10:29:06.000');
+INSERT INTO DestroyedDrug(PDno, PDbatch, PDnum, Sno, SAno, Stime, DAno, Dtime)
+	VALUES('H20171255', '2022-05-27', 27, 'SYC0001', 'admin0004', '2022-05-29 15:03:24.000',
+														'admin0003', '2022-11-13 10:29:06.000');
+INSERT INTO DestroyedDrug(PDno, PDbatch, PDnum, Sno, SAno, Stime, DAno, Dtime)
+	VALUES('J20210016', '2021-04-11', 3, 'SKYQD0001', 'admin0001', '2021-04-13 16:37:34.000',
+														'admin0003', '2022-03-14 15:20:16.000');
+INSERT INTO DestroyedDrug(PDno, PDbatch, PDnum, Sno, SAno, Stime, DAno, Dtime)
+	VALUES('J20210016', '2021-08-06', 21, 'SYC0001', 'admin0005', '2021-08-08 15:08:24.000',
+														'admin0003', '2022-07-12 09:53:36.000');
+INSERT INTO DestroyedDrug(PDno, PDbatch, PDnum, Sno, SAno, Stime, DAno, Dtime)
+	VALUES('J20030013', '2021-03-17', 7, 'SHY0001', 'admin0005', '2021-03-19 15:03:24.000',
+														'admin0003', '2021-09-08 10:29:06.000');
+INSERT INTO DestroyedDrug(PDno, PDbatch, PDnum, Sno, SAno, Stime, DAno, Dtime)
+	VALUES('J20030013', '2021-06-12', 33, 'SDS0001', 'admin0001', '2021-06-16 16:37:34.000',
+														'admin0005', '2021-12-03 15:20:16.000');
+INSERT INTO DestroyedDrug(PDno, PDbatch, PDnum, Sno, SAno, Stime, DAno, Dtime)
+	VALUES('J20030013', '2021-09-26', 25, 'SYC0001', 'admin0005', '2021-09-28 15:08:24.000',
+														'admin0003', '2022-03-10 09:53:36.000');
+INSERT INTO DestroyedDrug(PDno, PDbatch, PDnum, Sno, SAno, Stime, DAno, Dtime)
+	VALUES('Z20120003', '2017-12-31', 45, 'SZX0001', 'admin0003', '2021-01-02 13:59:04.000',
+														'admin0005', '2022-11-25 08:56:16.000');
+INSERT INTO DestroyedDrug(PDno, PDbatch, PDnum, Sno, SAno, Stime, DAno, Dtime)
+	VALUES('H20171253', '2021-09-29', 1, 'SXZT0001', 'admin0004', '2021-09-30 13:58:28.000',
+														'admin0003', '2022-03-13 09:53:36.000');
+INSERT INTO DestroyedDrug(PDno, PDbatch, PDnum, Sno, SAno, Stime, DAno, Dtime)
+	VALUES('H20171253', '2021-12-13', 22, 'SXZT0001', 'admin0001', '2021-12-14 17:09:04.000',
+														'admin0005', '2022-05-26 08:16:18.000');
+INSERT INTO DestroyedDrug(PDno, PDbatch, PDnum, Sno, SAno, Stime, DAno, Dtime)
+	VALUES('J20171070', '2021-12-17', 2, 'SZX0001', 'admin0001', '2021-12-18 16:19:54.000',
+														'admin0004', '2022-11-21 09:53:08.000');
+INSERT INTO DestroyedDrug(PDno, PDbatch, PDnum, Sno, SAno, Stime, DAno, Dtime)
+	VALUES('J20160100', '2021-08-17', 5, 'SZX0001', 'admin0002', '2021-08-18 17:06:36.000',
+														'admin0001', '2022-02-05 13:57:46.000');
+INSERT INTO DestroyedDrug(PDno, PDbatch, PDnum, Sno, SAno, Stime, DAno, Dtime)
+	VALUES('J20160100', '2022-06-03', 38, 'SYT0001', 'admin0005', '2022-06-04 15:09:34.000',
+														'admin0002', '2022-11-21 12:08:53.000');
+INSERT INTO DestroyedDrug(PDno, PDbatch, PDnum, Sno, SAno, Stime, DAno, Dtime)
+	VALUES('HC20160033', '2022-06-12', 82, 'SGT0001', 'admin0001', '2022-06-16 13:48:35.000',
+														'admin0002', '2022-12-02 10:06:13.000');
+INSERT INTO DestroyedDrug(PDno, PDbatch, PDnum, Sno, SAno, Stime, DAno, Dtime)
+	VALUES('H20160566', '2021-02-17', 35, 'SHY0001', 'admin0002', '2021-02-21 14:05:26.000',
+														'admin0001', '2022-08-02 16:27:06.000');
+INSERT INTO DestroyedDrug(PDno, PDbatch, PDnum, Sno, SAno, Stime, DAno, Dtime)
+	VALUES('H20160566', '2021-08-03', 3, 'SYT0001', 'admin0003', '2021-08-10 16:17:03.000',
+														'admin0002', '2022-01-19 10:48:23.000');
+INSERT INTO DestroyedDrug(PDno, PDbatch, PDnum, Sno, SAno, Stime, DAno, Dtime)
+	VALUES('H20160566', '2021-12-29', 9, 'SXZT0001', 'admin0002', '2021-12-30 12:13:04.000',
+														'admin0003', '2022-06-05 13:09:56.000');

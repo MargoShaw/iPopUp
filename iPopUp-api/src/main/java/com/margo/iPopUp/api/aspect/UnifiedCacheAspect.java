@@ -67,6 +67,10 @@ public class UnifiedCacheAspect {
         //先从redis获取ee
         String redisKey = name + "::" + className+"::"+methodName+"::"+params.toString();
         String redisValue = redisTemplate.opsForValue().get(redisKey);
+            if (StringUtils.isNotEmpty(redisValue)){
+                JsonResponse jsonResponse = JSON.parseObject(redisValue, JsonResponse.class);
+                return jsonResponse;
+            }
         Object proceed = pjp.proceed();
         redisTemplate.opsForValue().set(redisKey,JSON.toJSONString(proceed), Duration.ofMillis(expire));
         return proceed;

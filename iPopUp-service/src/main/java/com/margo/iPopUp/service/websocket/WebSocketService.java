@@ -1,6 +1,7 @@
 package com.margo.iPopUp.service.websocket;
 
 import com.alibaba.fastjson.JSONObject;
+import com.google.common.hash.BloomFilter;
 import com.margo.iPopUp.domain.Danmu;
 import com.margo.iPopUp.domain.constant.UserMomentsConstant;
 import com.margo.iPopUp.service.DanmuService;
@@ -11,6 +12,7 @@ import org.apache.rocketmq.client.producer.DefaultMQProducer;
 import org.apache.rocketmq.common.message.Message;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
@@ -34,6 +36,9 @@ public class WebSocketService {
     private static final AtomicInteger ONLINE_COUNT = new AtomicInteger(0);
 
     public static final ConcurrentHashMap<String, WebSocketService> WEBSOCKET_MAP = new ConcurrentHashMap<>();
+
+    @Autowired
+    private BloomFilter<String> bloomFilter;
 
     private Session session;
 
@@ -94,12 +99,14 @@ public class WebSocketService {
                     RocketMQUtil.asyncSendMsg(danmusProducer, msg);
                 }
                 if(this.userId != null){
+
                     //保存弹幕到数据库
                     Danmu danmu = JSONObject.parseObject(message, Danmu.class);
                     danmu.setUserId(userId);
                     danmu.setCreateTime(new Date());
                     DanmuService danmuService = (DanmuService)APPLICATION_CONTEXT.getBean("danmuService");
                     danmuService.asyncAddDanmu(danmu);
+                    bloomFilter.put(danmu.getId().toString());
                     //保存弹幕到redis
                     danmuService.addDanmusToRedis(danmu);
                 }

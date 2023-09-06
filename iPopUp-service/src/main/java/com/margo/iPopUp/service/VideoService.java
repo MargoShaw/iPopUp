@@ -1,5 +1,6 @@
 package com.margo.iPopUp.service;
 
+import com.google.common.collect.Collections2;
 import com.margo.iPopUp.dao.VideoDao;
 import com.margo.iPopUp.domain.*;
 import com.margo.iPopUp.domain.exception.ConditionException;
@@ -27,8 +28,10 @@ import org.bytedeco.javacv.FFmpegFrameGrabber;
 import org.bytedeco.javacv.Frame;
 import org.bytedeco.javacv.Java2DFrameConverter;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.util.CollectionUtils;
 
 import javax.imageio.ImageIO;
 import javax.servlet.http.HttpServletRequest;
@@ -62,6 +65,9 @@ public class VideoService {
 
     @Autowired
     private FileService fileService;
+
+    @Autowired
+    private RedisTemplate redisTemplate;
 
     private static final int FRAME_NO = 256;
 
@@ -433,5 +439,13 @@ public class VideoService {
 
     public List<VideoBinaryPicture> getVideoBinaryImages(Map<String, Object> params) {
         return videoDao.getVideoBinaryImages(params);
+    }
+
+    public List<VideoRanking> getVideoRanking() {
+        Set set = redisTemplate.opsForZSet().reverseRange("video-ranking", 0, 10);
+        if(set != null&&!CollectionUtils.isEmpty(set)){
+            return new ArrayList<>(set);
+        }
+        return Collections.emptyList();
     }
 }

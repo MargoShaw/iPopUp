@@ -27,6 +27,10 @@ public class JsonResponse<T> {
         return new JsonResponse<>(data);
     }
 
+    public static <T> JsonResponse success(T data){
+        return new JsonResponse<T>(data);
+    }
+
     public static JsonResponse<String> fail(){
         return new JsonResponse<>("1", "失败");
     }
