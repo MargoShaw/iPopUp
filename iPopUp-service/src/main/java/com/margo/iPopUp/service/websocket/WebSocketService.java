@@ -3,8 +3,11 @@ package com.margo.iPopUp.service.websocket;
 import com.alibaba.fastjson.JSONObject;
 import com.google.common.hash.BloomFilter;
 import com.margo.iPopUp.domain.Danmu;
+import com.margo.iPopUp.domain.annotation.RateLimiter;
 import com.margo.iPopUp.domain.constant.UserMomentsConstant;
 import com.margo.iPopUp.service.DanmuService;
+import com.margo.iPopUp.service.config.WebSocketConfig;
+import com.margo.iPopUp.service.util.IdGenerateUtil;
 import com.margo.iPopUp.service.util.RocketMQUtil;
 import com.margo.iPopUp.service.util.TokenUtil;
 import io.netty.util.internal.StringUtil;
@@ -13,6 +16,7 @@ import org.apache.rocketmq.common.message.Message;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.context.ApplicationContext;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
@@ -28,6 +32,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicInteger;
 
 @Component
+@ConditionalOnClass(value = WebSocketConfig.class)
 @ServerEndpoint("/imserver/{token}")
 public class WebSocketService {
 
@@ -37,8 +42,6 @@ public class WebSocketService {
 
     public static final ConcurrentHashMap<String, WebSocketService> WEBSOCKET_MAP = new ConcurrentHashMap<>();
 
-    @Autowired
-    private BloomFilter<String> bloomFilter;
 
     private Session session;
 
@@ -83,6 +86,7 @@ public class WebSocketService {
         logger.info("用户退出：" + sessionId + "当前在线人数为：" + ONLINE_COUNT.get());
     }
 
+//    @RateLimiter(key = "limit-danmu",count = 1000,rate = 10)
     @OnMessage
     public void onMessage(String message){
         logger.info("用户信息：" + sessionId + "，报文：" + message);
@@ -105,8 +109,9 @@ public class WebSocketService {
                     danmu.setUserId(userId);
                     danmu.setCreateTime(new Date());
                     DanmuService danmuService = (DanmuService)APPLICATION_CONTEXT.getBean("danmuService");
+                    Long uid = IdGenerateUtil.get().nextId();
+                    danmu.setId(uid);
                     danmuService.asyncAddDanmu(danmu);
-                    bloomFilter.put(danmu.getId().toString());
                     //保存弹幕到redis
                     danmuService.addDanmusToRedis(danmu);
                 }
@@ -127,7 +132,7 @@ public class WebSocketService {
 
     //或直接指定时间间隔，例如：5秒
     @Scheduled(fixedRate=5000)
-    private void noticeOnlineCount() throws IOException {
+    public void noticeOnlineCount() throws IOException {
         for(Map.Entry<String, WebSocketService> entry : WebSocketService.WEBSOCKET_MAP.entrySet()){
             WebSocketService webSocketService = entry.getValue();
             if(webSocketService.session.isOpen()){

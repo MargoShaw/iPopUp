@@ -18,7 +18,7 @@ public class RedisCacheService {
     private BloomFilter<String> bloomFilter;
 
     @Autowired
-    private RedisTemplate<String, Object> redisTemplate;
+    private RedisTemplate<String, String> redisTemplate;
 
     public boolean isExist(String key){
         return bloomFilter.mightContain(key);

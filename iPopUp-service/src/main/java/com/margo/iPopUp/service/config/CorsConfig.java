@@ -52,7 +52,7 @@ public class CorsConfig implements Filter {
             httpResponse.setContentType("application/json;charset=UTF-8");
             httpResponse.setHeader("Access-Control-Allow-Methods", "POST, GET, OPTIONS, DELETE, PUT");
             httpResponse.setHeader("Access-Control-Max-Age", "3600");
-            httpResponse.setHeader("Access-Control-Allow-Headers", "Origin, No-Cache, X-Requested-With, If-Modified-Since, Pragma, Last-Modified, Cache-Control, Expires, Content-Type, X-E4M-With, userId, token, ut");//表明服务器支持的所有头信息字段
+            httpResponse.setHeader("Access-Control-Allow-Headers", "Origin, No-Cache, X-Requested-With, If-Modified-Since, Pragma, Last-Modified, Cache-Control, Expires, Content-Type, X-E4M-With, userId, token, ut, refreshtoken");//表明服务器支持的所有头信息字段
             httpResponse.setHeader("Access-Control-Allow-Credentials", "true"); //如果要把Cookie发到服务器，需要指定Access-Control-Allow-Credentials字段为true;
             httpResponse.setHeader("XDomainRequestAllowed","1");
         }

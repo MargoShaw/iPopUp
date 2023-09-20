@@ -9,7 +9,7 @@ import java.util.Map;
 @Mapper
 public interface DanmuDao {
 
-    Integer addDanmu(Danmu danmu);
+    Long addDanmu(Danmu danmu);
 
     List<Danmu> getDanmus(Map<String,Object> params);
 }

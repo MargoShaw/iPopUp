@@ -6,12 +6,14 @@
     <insert id="addDanmu" parameterType="com.margo.iPopUp.domain.Danmu">
         insert into
             t_danmu(
+                id,
                 userId,
                 videoId,
                 content,
                 danmuTime,
                 createTime
             )values(
+                #{id},
                 #{userId},
                 #{videoId},
                 #{content},

@@ -29,13 +29,13 @@ public class DanmuService {
     @Autowired
     private BloomFilter<String> bloomFilter;
 
-    public void addDanmu(Danmu danmu){
-        danmuDao.addDanmu(danmu);
+    public Long addDanmu(Danmu danmu){
+        return danmuDao.addDanmu(danmu);
     }
 
     @Async("io-executor")
-    public void asyncAddDanmu(Danmu danmu){
-        danmuDao.addDanmu(danmu);
+    public Long asyncAddDanmu(Danmu danmu){
+        return danmuDao.addDanmu(danmu);
     }
 
     /**
@@ -45,10 +45,7 @@ public class DanmuService {
     public List<Danmu> getDanmus(Long videoId,
                                  String startTime, String endTime) throws Exception {
 
-        //如果数据库不存在，直接返回空
-        if(!bloomFilter.mightContain(videoId.toString())){
-            return Collections.emptyList();
-        }
+
         String key = DANMU_KEY + videoId;
         String value = redisTemplate.opsForValue().get(key);
         List<Danmu> list;

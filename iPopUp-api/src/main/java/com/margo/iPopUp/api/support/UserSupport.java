@@ -24,7 +24,7 @@ public class UserSupport {
         if(userId < 0) {
             throw new ConditionException("非法用户");
         }
-        this.verifyRefreshToken(userId);
+//        this.verifyRefreshToken(userId);
         return userId;
     }
 

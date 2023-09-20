@@ -14,7 +14,7 @@ public @interface RateLimiter
     /**
      * 限流key
      */
-    public String key() default "limit-key:";
+    public String key() default "limit-key";
 
     /**
      * 限流时间,单位秒
@@ -22,7 +22,7 @@ public @interface RateLimiter
     public int time() default 60;
 
     /**
-     * 限流次数
+     * 令牌桶大小
      */
     public int count() default 100;
 
@@ -30,4 +30,12 @@ public @interface RateLimiter
      * 限流类型
      */
     public String limitType() default LimitType.DEFAULT;
+
+    /**
+     * 令牌桶的令牌每秒生成速率
+     * @return
+     */
+    public int rate() default 5;
+
+    public String app() default "iPopUp";
 }

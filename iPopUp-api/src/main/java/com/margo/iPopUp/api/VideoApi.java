@@ -154,7 +154,7 @@ public class VideoApi {
     /**
      * 添加视频评论
      */
-    @RateLimiter()
+    @RateLimiter(key = "limit-comments",count = 100,rate = 5)
     @PostMapping("/video-comments")
     public JsonResponse<String> addVideoComment(@RequestBody VideoComment videoComment){
         Long userId = userSupport.getCurrentUserId();
